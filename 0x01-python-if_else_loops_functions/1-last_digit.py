@@ -6,6 +6,9 @@ sm = abs(number)
 
 Last_di = sm % 10
 
+if number < 0:
+    Last_di = -Last_di
+
 if Last_di > 5:
     print(f"Last digit of {number} is {Last_di} and is greater than 5")
 elif Last_di == 0:

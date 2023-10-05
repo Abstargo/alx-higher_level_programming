@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    # First difining the variables a and b
-
     """ Second thing is to import the function from the 
     other file called calculator_1.py """
     from calculator_1 import add, sub, mul, div

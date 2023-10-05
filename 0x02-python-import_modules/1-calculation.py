@@ -10,14 +10,9 @@ if __name__ == "__main__":
 
     a = 10
     b = 5
-    # Next, we store the functions values into different variables
-    result_add = add(a, b)
-    result_sub = sub(a, b)
-    result_mul = mul(a, b)
-    result_div = div(a, b)
 
     #Last thing is to print the results using the format function by an (:d) integer
-    print("{} + {} = {}".format(a, b, result_add))
-    print("{} - {} = {}".format(a, b, result_sub))
-    print("{} * {} = {}".format(a, b, result_mul))
-    print("{} / {} = {}".format(a, b, result_div))
+    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{} - {} = {}".format(a, b, sub(a, b)))
+    print("{} * {} = {}".format(a, b, mul(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))

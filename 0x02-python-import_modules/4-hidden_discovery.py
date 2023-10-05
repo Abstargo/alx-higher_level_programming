@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 
 if __name__ == "__main__":
     """Prints all name defined by hidden_4 module."""

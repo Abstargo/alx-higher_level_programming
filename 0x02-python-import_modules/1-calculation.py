@@ -14,7 +14,7 @@ result_mul = mul(a, b)
 result_div = div(a, b)
 
 #Last thing is to print the results using the format function by an (:d) integer
-print("{:d} + {:d} = {:d}".format(a, b, result_add))
-print("{:d} - {:d} = {:d}".format(a, b, result_sub))
-print("{:d} * {:d} = {:d}".format(a, b, result_mul))
-print("{:d} / {:d} = {:.0f}".format(a, b, result_div))
+print("{} + {} = {}".format(a, b, result_add))
+print("{} - {} = {}".format(a, b, result_sub))
+print("{} * {} = {}".format(a, b, result_mul))
+print("{} / {} = {}".format(a, b, result_div))

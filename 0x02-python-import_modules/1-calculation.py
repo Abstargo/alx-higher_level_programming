@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 # First difining the variables a and b
 a = 10
 b = 5

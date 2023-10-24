@@ -24,7 +24,7 @@ class Square:
 
         Args:
             size (int, optional): The size of the square (default is 0).
-        
+
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
@@ -33,7 +33,7 @@ class Square:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
- 
+
         self.__size = size
 
     @property
@@ -53,7 +53,7 @@ class Square:
 
         Args:
             value (int): The new size value.
- 
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
@@ -62,7 +62,7 @@ class Square:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
- 
+
         self.__size = value
 
     def area(self):

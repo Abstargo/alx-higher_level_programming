@@ -2,3 +2,4 @@
 class Square:
     """Wrrite an empty class called Square"""
     pass
+

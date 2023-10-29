@@ -5,8 +5,8 @@
 
 class Square:
     """
-    This class defines a square and provides methods
-    to get and set its size and calculate area.
+    This class defines a square and provides methods to
+    manipulate and print it.
 
     Attributes:
         __size (int): The size of the square.
@@ -15,6 +15,7 @@ class Square:
         size: Getter method to retrieve the size of the square.
         size.setter: Setter method to set the size of the square.
         area(): Calculates and returns the area of the square.
+        my_print(): Prints the square pattern using '#'.
     """
 
     def __init__(self, size=0):
@@ -72,3 +73,15 @@ class Square:
             int: The area of the square.
         """
         return self.__size ** 2
+
+    def my_print(self):
+        """
+        Prints the square pattern using '#' characters.
+
+        If the size is 0, it prints an empty line.
+        """
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__size):
+                print('#' * self.__size)

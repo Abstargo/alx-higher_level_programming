@@ -9,7 +9,7 @@ def read_file(filename=""):
 
     Args:
         filename (str): The name of the file to read.
-    
+
     Returns:
         None
     """

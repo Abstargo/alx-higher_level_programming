@@ -21,3 +21,12 @@ class Square(Rectangle):
 
     def __str__(self):
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width))
+
+    def update(self, *args, **kwargs):
+        if args:
+            attributes = ["id", "size", "x", "y"]
+            for i, value in enumerate(args):
+                setattr(self, attributes[i], value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)

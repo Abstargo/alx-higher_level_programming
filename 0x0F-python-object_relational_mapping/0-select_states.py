@@ -1,53 +1,23 @@
 #!/usr/bin/python3
+""" Script that lists all states from the database hbtn_0e_0_usa """
 import MySQLdb
-import sys
+from sys import argv
 
-if __name__ == "__main__":
-    # Check if correct number of arguments is provided
-    if len(sys.argv) != 4:
-        print("Usage: {} username password database".format(sys.argv[0]))
-        sys.exit(1)
+# The code should not be executed when imported
+if __name__ == '__main__':
 
-    # Parse command line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    # make a connection to the database
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
 
-    try:
-        # Connect to MySQL database
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            passwd=password,
-            db=database
-        )
+    # It gives us the ability to have multiple seperate working environments
+    # through the same connection to the database.
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states")
 
-        # Create cursor object
-        cursor = db.cursor()
-
-        # Execute SQL query to select all states from the states table
-        cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
-        # Fetch all rows
-        rows = cursor.fetchall()
-
-        # Print results
-        for row in rows:
-            print(row)
-
-    except MySQLdb.OperationalError as e:
-        print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
-        sys.exit(1)
-
-    except Exception as e:
-        print("An error occurred:", e)
-        sys.exit(1)
-
-    finally:
-        # Close cursor and database connection
-        if 'cursor' in locals():
-            cursor.close()
-        if 'db' in locals():
-            db.close()
-
+    rows = cur.fetchall()
+    for i in rows:
+        print(i)
+    # Clean up process
+    cur.close()
+    db.close()
